@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios condicionales y bucles</title>
+</head>
+<body>
+    <h1>Ejercicios Pag 168 y 171</h1>
+    <p><b>Ejercicio 2</b></p>
+    <script>
+//Ejercicio 2: escribe un programa con cuatro variables de tipo number (a, b, c y d) y un
+//condicional que imprima por pantalla si la suma de a y b es mayor que la suma de c y d.
+let a=4;
+let b=3;
+let c=5;
+let d=1;
+if ((a+b)>(c+d)) {   
+    document.write("La suma de 'a+b' es mayor que la de 'c+d' ");
+}else{   
+    document.write("La suma de 'a+b' es menor o igual que la de 'c+d'");
+
+}
+</script>
+
+
+<p><b>Ejercicio adicional intervalos</b></p>
+<script>
+//Ejercicio Adicional de intervalos: de 9-14h estamos en StBoi y de 15-20 en Castefa
+let hora=19;
+
+if ((hora>=9)&&(hora<=14)) {               //No se puede poner (9>=hora<=14) porque no sabe si es OR o AND
+    document.write("Clase St Boi.");       
+}else if ((hora>=15)&&(hora<=20)) {
+    document.write("Clase Castelldefels.");
+}else { 
+document.write("No estoy en calse")
+}
+
+    </script>
+    <p><b>Ejercicio 3</b></p>
+    <script>
+    let ang1=90;
+    let ang2=45;
+    let ang3=45;
+
+    if ((ang1+ang2+ang3)==180) {
+        document.write("Es un triangulo. Sus angulos suman 180º <br>");
+        if (ang1==ang2 || ang1==ang3 || ang2==ang3) {
+            document.write("Además es isosceles.");
+        }else if(ang1==90 || ang1==90 || ang2==90){
+            document.write("Además es rectangulo.");
+        }else if((ang1==90 || ang1==90 || ang2==90)&&(ang1==ang2 || ang1==ang3 || ang2==ang3)) {
+            document.write("Además es isosceles y rectangulo.");
+            
+        }else {document.write("Además es escaleno.");
+            
+        }
+    } else {
+        document.write("No es un triangulo. Sus angulos no suman 180º");
+        
+    }
+    </script>
+<p><b>Ejercicio 4</b></p>
+<!-- Ejercicio 4: escribe un programa con una variable de tipo number (a) y un condicional
+que evalúe si el entero es par o impar utilizando el operador %. -->
+<script>
+let paroimpar=31;
+if (paroimpar%2==0) {
+    document.write("Es par");
+    
+} else {
+    document.write("Es impar");
+}
+</script>
+<p><b>Ejercicio 5</b></p>
+<!-- Ejercicio 5: escribe un programa que dado tres números imprima por pantalla cuál es el
+mayor. -->
+<script>
+    let num1=5;
+    let num2=3;
+    let num3=5;
+    document.write(Math.max(num1,num2,num3),"<br>");   //cual es el numero mas grande aunque se repita?
+
+    if (num1>num2&&num1>num3&&!(num1==num2)&&!(num1==num3) ) {     //muestra exactamente cual o cuales son los mayores
+            
+                document.write("num1 es el mayor");}
+    else if(num2>num1&&num2>num3&&!(num1==num2)&&!(num2==num3) ){
+                document.write("num2 es el mayor");}
+        
+    else if(num3>num2&&num3>num1&&!(num1==num3)&&!(num2==num3) ) {
+                document.write("num3 es el mayor")
+            }
+    else if((num1==num2) && !(num1==num3)){
+                document.write("num1 y num 2 son los mayores");
+            }
+    else if((num1==num3) && !(num1==num2)){
+                document.write("num1 y num 3 son los mayores");
+            }
+    else if((num2==num3) && !(num2==num1)){
+                document.write("num2 y num 3 son los mayores");
+            }
+    else {
+                document.write("Todos los numeros son el mismo");
+            }
+    
+</script>
+<p><b>Ejercicio 8 y 9</b></p>
+<!-- Ejercicio 8: escribe un programa que muestre todos los números desde el 1 al 50. -->
+<!-- Ejercicio 9: escribe un programa que imprima toda la tabla de multiplicar del 5 (desde 0
+hasta 10). -->
+<script> for (let i=1;i<=50;i++){
+
+    document.write(i," ");
+}
+document.write("<br>");
+
+    for (let i=0;i<=10;i++) {
+        
+        document.write("5x"+ i + "=" + 5*i + " ");
+        
+    }
+</script>
+<p><b>Ejercicio 10</b></p>
+<!-- Ejercicio 10: escribe un programa que pida al usuario una palabra (mediante la función
+prompt) y lo muestre por pantalla 10 veces. -->
+<script> 
+let palabra=prompt("Escribe una palabra para el ejercicio 10","palabra");
+
+    for(let i=1;i<=10;i++) {
+document.write(palabra+" nº"+i+" ");
+}
+</script>
+<p><b>Ejercicio 11</b></p>
+<!-- Ejercicio 11: escribe un programa que pida al usuario un número entero positivo
+(mediante la función prompt) y muestre por pantalla la cuenta atrás desde ese número
+hasta cero, utilizando comas como separación. -->
+<script>
+    var numero= prompt("Escribe un numero natural","numero")
+    numero=parseInt(numero);
+    console.log(typeof(numero));
+    if((typeof(numero)=="number")&&(numero>=0)){
+        console.log("es un numero natural");
+
+    for (let i = numero; i >= 0; i--) {
+        if (i==0) {
+            document.write(i);
+        } else {
+            document.write(i+",") ;
+        }
+       
+    }
+    }
+
+    
+</script>
+</body>
+</html>
