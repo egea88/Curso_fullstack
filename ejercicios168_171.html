@@ -137,22 +137,27 @@ document.write(palabra+" nº"+i+" ");
 (mediante la función prompt) y muestre por pantalla la cuenta atrás desde ese número
 hasta cero, utilizando comas como separación. -->
 <script>
-    var numero= prompt("Escribe un numero natural","numero")
-    numero=parseInt(numero);
-    console.log(typeof(numero));
-    if((typeof(numero)=="number")&&(numero>=0)){
-        console.log("es un numero natural");
-
-    for (let i = numero; i >= 0; i--) {
-        if (i==0) {
-            document.write(i);
-        } else {
-            document.write(i+",") ;
-        }
-       
-    }
-    }
-
+    var numero
+    
+        while(!((typeof(numero)=="number")&&(numero>=0))){          //hasta que no sea lo contrario no sale del while
+        numero = prompt("Escribe un numero natural","numero");
+    
+        numero=parseInt(numero);                                        //cambia de string a number
+        console.log(typeof(numero));                                           
+            if((typeof(numero)=="number")&&(numero>=0)){
+            console.log("es un numero natural");
+                       
+                for (let i = numero; i >= 0; i--) {
+                    if (i==0) {
+                     document.write(i);
+                    } else {
+                     document.write(i+",") ;
+                    }
+                }
+             }       
+            else{console.log("no es un numero natural, se repite el prompt");}
+    
+            }
     
 </script>
 </body>
