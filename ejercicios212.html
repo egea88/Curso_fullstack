@@ -12,7 +12,7 @@
     <!-- Ejercicio 1: escribe un programa que genere un array de 6 valores de tipo number y sean 
  mostrados en pantalla utilizando un bucle for clásico y un bucle for...of -->
     <script>
- let Narray=[1,2,3,4,5,6]
+ let Narray=[1,2,3,4,5,6];
  let lon= Narray.length;
 
 
@@ -25,6 +25,57 @@ document.write(numA);
 }
 document.write("<br>");
     </script>
+    <p><b>Ejercicio 2 y 3</b></p>
+    <!-- Ejercicio 2 : escribe un programa que almacene los nombres de tres colores en un array y
+    los muestre por pantalla mediante un bucle for...of -->
+
+    <!-- Ejercicio 3: escribe un programa con un array que almacene los nombres de tres colores.
+A continuación, crea otro array vacío e inserta en él todos los elementos del primer array
+mediante un for...of y el método push. -->
+    <script>
+let colores=['amarillo','rojo','azul'];
+
+for (const color of colores) {
+    document.write(color,",");
+}
+    let colores2=[];
+
+    for (let color2 of colores) {
+        colores2.push(color2);
+    }
+    document.write("<br>",colores2);
+
     
+    </script>
+  <p><b>Ejercicio 4</b></p>
+  <!-- Ejercicio 4: escribe un programa que dado dos arrays, devuelva el número de elementos
+  que son iguales. -->
+  <script>
+
+      let elementos1=["mar","rio","sol","oceano"];
+      let elementos2=["oceano","rio","mar","monte"];
+      let contador=0;
+      let repetidos=[];
+      for(let element1 of elementos1){
+          for (let element2 of elementos2) {
+              if(element1==element2){
+                  contador++;
+                  repetidos.push(element1);
+              }
+          }
+      }
+         document.write("Hay ",contador," elementos iguales entre los dos arrays. Estos son:&nbsp",repetidos)
+  </script>
+  <p><b>Ejercicio 5</b></p>
+  <!-- Ejercicio 5: escribe un programa que extraiga una porción del array a partir de una
+  posición inferior y una superior y lo almacene en otro array. -->
+  <script>
+      let arry=[0,1,2,3,4,5];
+      let arry2=[];
+      arry2=(arry.splice(1, 2));
+      document.write("Array1: ",arry,"<br>");
+      document.write("Array2: ",arry2);
+      
+  </script>
 </body>
 </html>

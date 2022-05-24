@@ -81,9 +81,9 @@ document.write("no hay ninguna 'a' ")
 </script>
 <p><b>Ejercicio 6</b></p>
 <!-- Ejercicio 6: escribe un programa que devuelva si un string es palíndromo (se escribe igual
-hacia delante y hacia detrás). Ejemplo: "sometemos".  -->
+hacia delante y hacia detrás). Ejemplo: "sometemos". (si ponemos mayus y minus tambien funciona) -->
 <script>
-let pali= "someeTemos";
+let pali= "someTemos";
 let pali1= pali.toLowerCase();
 let pali2= pali.toLowerCase().split('').reverse().join('');
 
@@ -107,8 +107,42 @@ if (pali1==pali2) {
 
 </script>
 <!-- Ejercicio 8: escribe un programa que inserte el carácter 'b' cada tres posiciones en un
-string.
+string. -->
+
+<p><b>Ejercicio 8</b></p>
+
+<script>
+let str8="En un lugar de la mancha";
+let letra='b';
+let lon= str8.length;
+console.log(lon);
+
+for (let i = 0; i < lon; i++) {
+   
+    if (((i%3)==0)&!(i==0)&!(i==-1)) {  
+        
+       str8.splice(i-1,1,letra);   //falta saber como reemplazar los caracteres por la letra
+      
+        console.log(str8);
+    } else {
+
+        console.log("F",(i-1)," "); }
+    
+    
+}
+
+document.write(str8)
+
+
+</script>
+<!-- 
 Ejercicio 9: escribe un programa que convierta en mayúsculas la primera letra de cada
-palabra de un string. -->
+palabra de un string.  -->
+<p><b>Ejercicio 9</b></p>
+<script>
+    let str9="hola, mundo";
+    
+    document.write(str9.charAt(0).toUpperCase()+str9.slice(1));
+</script>
 </body>
 </html>
