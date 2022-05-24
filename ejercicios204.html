@@ -113,19 +113,19 @@ string. -->
 
 <script>
 let str8="En un lugar de la mancha";
-let letra='b';
+let letra=['b'];
 let lon= str8.length;
 console.log(lon);
-
+str8=str8.split('');
 for (let i = 0; i < lon; i++) {
    
-    if (((i%3)==0)&!(i==0)&!(i==-1)) {  
+    if (((i%3)==0) && !(i==0) && !(i==-1)) {  
         
-       str8.splice(i-1,1,letra);   //falta saber como reemplazar los caracteres por la letra
+       str8=str8.splice(i-1,0,letra);   //falta saber como reemplazar los caracteres por la letra
       
         console.log(str8);
     } else {
-
+str8.toString();
         console.log("F",(i-1)," "); }
     
     
