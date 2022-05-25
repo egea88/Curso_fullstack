@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Funciones</title>
+</head>
+<body>
+    <h1>Ejercicios Pag 176 y 177</h1>
+
+    <p><b>Ejercicio 1, 2 ,3 y 4</b></p>
+    <!-- Ejercicio 1 : escribir una programa con cuatro funciones de flecha: sumar, restar,
+    multiplicar y dividir (cada una de ellas debe aceptar dos parámetros y devolver el
+    resultado). Posteriormente invocar a las cuatro funciones con valores arbitrarios. 
+
+    Ejercicio 2: adaptar el programa del ejercicio anterior simplificando las funciones de
+    flecha eliminando las llaves y el return.-->
+
+    <!-- Ejercicio 3: adaptar las cuatro funciones del Ejercicio 2 para que reciban un callback que
+sea invocado dentro de la función con el resultado de la operación. Posteriormente
+invocar a las cuatro funciones creando una función de callback por separado y pasándola
+después por parámetro. Utilizar la herramienta de depuración de Chrome (Herramientas
+de desarrollador / Source) para comprobar cómo se ejecuta el programa. -->
+
+<!-- Ejercicio 4: adaptar el ejercicio anterior para integrar el callback en la invocación de las
+cuatro funciones, en lugar de creándola como una función de callback por separado.
+Utilizar la herramienta de depuración de Chrome para comprobar cómo se ejecuta el
+programa. -->
+<script>
+      
+
+      // cb= (callback) => document.write(callback,"  ")
+      
+        const sumar = (a, b,cb) => cb(a+b);              // en realidad es una funcion "no Global"                                                        
+        const resta = (a, b,cb) => cb(a-b);              //pero si la declaras de forma clasica seria Global
+        const mult =  (a, b,cb) => cb(a*b);              // si las llamas con => lo lee de arriba a abajo
+        const divi =  (a, b,cb) => cb(a/b);
+        
+         let x=3,y=2;
+        sumar(x,y,(callback) => document.write(callback,"  "));  //'invocaciones'
+        resta(x,y,(callback) => document.write(callback,"  "));
+        mult(x,y,(callback) => document.write(callback,"  "));
+        divi(x,y,(callback) => document.write(callback,"  "))
+
+
+</script>
+    
+
+
+</body>
+</html>
