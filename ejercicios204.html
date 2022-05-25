@@ -112,29 +112,23 @@ string. -->
 <p><b>Ejercicio 8</b></p>
 
 <script>
-let str8="En un lugar de la mancha";
-let letra=['b'];
-let lon= str8.length;
-console.log(lon);
-str8=str8.split('');
-for (let i = 0; i < lon; i++) {
-   
-    if (((i%3)==0) && !(i==0) && !(i==-1)) {  
-        
-       str8=str8.splice(i-1,0,letra);   //falta saber como reemplazar los caracteres por la letra
-      
-        console.log(str8);
-    } else {
-str8.toString();
-        console.log("F",(i-1)," "); }
-    
-    
-}
-
-document.write(str8)
-
-
-</script>
+    let str8="En un lugar de la mancha";
+    let letra='b';
+    let lon= str8.length;
+    console.log(lon);
+    str8 = str8.split('');
+    console.log(str8); //Marc: Lo muestro para ver que lo hace correcto, incluso espacios
+    for (let i = 0; i < lon; i++) {
+        if ((i%3)==0) {  //Marc: He quitado !(i==0) && !(i==-1) innecesarios en realidad
+            str8.splice((i-1),1,letra);   //falta saber como reemplazar los caracteres por la letra
+            console.log(str8); //Marc: No es necesario, pero ok para revisar
+        } else {    
+            console.log("F",(i-1)," "); //Marc: No es necesario, pero ok para revisar
+        }
+    }
+    str8=str8.join(''); //Marc: join() une de nuevo los arrays a strings pero se le debe asignar a una variable a mostrar
+    document.write(str8);
+    </script>
 <!-- 
 Ejercicio 9: escribe un programa que convierta en mayúsculas la primera letra de cada
 palabra de un string.  -->

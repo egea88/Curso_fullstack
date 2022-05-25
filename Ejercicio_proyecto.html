@@ -7,44 +7,99 @@
     <title>Ejercicios del Proyecto</title>
 </head>
 <body>
-    <h1>Ejercicios Proyecto</h1>
-    <p><b>Ejercicio 1 del Proyecto</b></p>
+    <h1>Ejercicios del Proyecto</h1>
+    
     <!-- Ejercicio 1 del proyecto: escribe un programa que declare 3 objetos de cada modelo de
     datos considerado: gestor, cliente, mensaje y transferencia. Los valores de las
     propiedades de los objetos pueden ser arbitrarios. -->
+
+
+    <!-- Ejercicio 2 del proyecto: escribe un programa que almacene los objetos creados en el
+    ejercio anterior del proyecto dentro de un array (un array por cada modelo de datos). A
+    continuación, recorre cada uno de los arrays y muestra todas propiedades. -->
+
 <script>
 const objeto1 = {
-gestor: "Hola, soy un mensaje",
-cliente:"Iniciando transferencia",
+gestor: "Adrian",
+cliente:"Banco X",
 mensaje() {
-console.log(this.gestor);
+document.write("Hola "+ this.gestor, "<br>");
 },
-transferencia
-() {
-console.log(this.cliente);
+transferencia() {
+document.write("La transferencia de "+this.cliente+ " se a realizado correctamente", "<br>");
 }
 }
 const objeto2 = {
-gestor: "Hola, soy un mensaje",
-cliente:"Iniciando transferencia",
+gestor: "Marc",
+cliente:"Banco Y",
 mensaje() {
-console.log(this.gestor);
+document.write("Hola "+ this.gestor, "<br>");
 },
-transferencia
-() {
-console.log(this.cliente);
+transferencia() {
+document.write("La transferencia de "+this.cliente+ " se a realizado correctamente", "<br>");
 }
 }
 const objeto3 = {
-gestor: "Hola, soy un mensaje",
-cliente:"Iniciando transferencia",
+gestor: "Alex",
+cliente:"Banco Z",
 mensaje() {
-console.log(this.gestor);
+document.write("Hola "+ this.gestor, "<br>");
 },
-transferencia
-() {
-console.log(this.cliente);
+transferencia() {
+document.write("La transferencia de "+this.cliente+ " se a realizado correctamente", "<br>");
 }
+}
+let Oarray = Object.keys(objeto1);
+let Oarray2 = Object.keys(objeto2);
+let Oarray3 = Object.keys(objeto3);
+
+
+for (let i in Oarray) {
+
+    document.write(i, "*  ");
+
+    document.write(Oarray[i], ": ");
+
+
+        if (typeof(objeto1[Oarray[i]])=="function") {
+    
+           objeto1[Oarray[i]]();
+
+        } else {
+        document.write(objeto1[Oarray[i]], "<br>");}
+}
+
+
+for (let i in Oarray2) {
+
+    document.write(i, "*  ");
+
+    document.write(Oarray2[i], ": ")
+       
+
+    if (typeof(objeto2[Oarray2[i]])=="function") {
+    
+    objeto2[Oarray2[i]]();
+
+        } else {
+        document.write(objeto2[Oarray2[i]], "<br>");}
+}
+
+
+for (let i in Oarray3) {
+
+    document.write(i, "*  ");
+
+    document.write(Oarray3[i], ": ")
+        
+
+    if (typeof(objeto3[Oarray3[i]])=="function") {
+    
+    objeto3[Oarray3[i]]();
+
+        } else {
+        document.write(objeto3[Oarray3[i]], "<br>");}
+
 }
 
 </script>
