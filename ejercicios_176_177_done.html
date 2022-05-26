@@ -27,24 +27,51 @@ de desarrollador / Source) para comprobar cómo se ejecuta el programa. -->
 cuatro funciones, en lugar de creándola como una función de callback por separado.
 Utilizar la herramienta de depuración de Chrome para comprobar cómo se ejecuta el
 programa. -->
+
+<!-- Ejercicio 5: adaptar las cinco funciones del Ejercicio 4 para que las cuatro funciones
+invoquen el callback una vez han transcurrido 1 segundo (para la función sumar), 2
+segundos (para la función restar), 3 segundos (para la función multiplicar) y 4 segundos
+para dividir (para la función dividir). Añadir un console.log en la última línea del código
+del programa. Utilizar la herramienta de depuración de Chrome para comprobar cómo se
+ejecuta el programa. -->
+
+<p id="id1"></p>
+<p id="id2"></p>
+<p id="id3"></p>
+<p id="id4"></p>
+<p id="id5"></p>
 <script>
       
-
-      // cb= (callback) => document.write(callback,"  ")
+let IDv=2
+       
+      // en realidad es una funcion "no Global"
+      //pero si la declaras de forma clasica seria Global
+      // si las llamas con => lo lee de arriba a abajo
       
-        const sumar = (a, b,cb) => cb(a+b);              // en realidad es una funcion "no Global"                                                        
-        const resta = (a, b,cb) => cb(a-b);              //pero si la declaras de forma clasica seria Global
-        const mult =  (a, b,cb) => cb(a*b);              // si las llamas con => lo lee de arriba a abajo
-        const divi =  (a, b,cb) => cb(a/b);
-        
+        const sumar = (a, b,cb) => cb(a+b);                                                                                                                 
+        const resta = (a, b,cb) => cb(a-b);                 
+        const mult =  (a, b,cb) => cb(a*b);                  
+        const divi =  (a, b,cb) => cb(a/b); 
          let x=3,y=2;
-        sumar(x,y,(callback) => document.write(callback,"  "));  //'invocaciones'
-        resta(x,y,(callback) => document.write(callback,"  "));
-        mult(x,y,(callback) => document.write(callback,"  "));
-        divi(x,y,(callback) => document.write(callback,"  "))
-
-
+        setTimeout(() => { 
+            sumar(x,y,((callback) => document.getElementById("id"+IDv).innerHTML = callback)); IDv++;
+            }, 1000);
+        setTimeout(() => { 
+                resta(x,y,((callback) => document.getElementById("id"+IDv).innerHTML = callback)); IDv++;
+            }, 2000);    
+        setTimeout(() => { 
+              mult(x,y,((callback) => document.getElementById("id"+IDv).innerHTML = callback)); IDv++;
+            }, 3000);  
+        setTimeout(() => { 
+                divi(x,y,((callback) => document.getElementById("id"+IDv).innerHTML = callback)); IDv++;
+            }, 4000);
+        
+        
+        document.getElementById("id1").innerHTML="prueba de 0 segundos";
 </script>
+
+
+
     
 
 

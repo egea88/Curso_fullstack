@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio_Objetos</title>
+</head>
+<body>
+    <h1>Ejercicios Pag 197</h1>
+    <p><b>Ejercicio 1</b></p>
+    <!-- Ejercicio 1: escribe un programa que liste el nombre de las propiedades del siguiente
+    objeto utilizando las dos formas comentadas con anterioridad: { name : "David Rayy",
+    sclass : "VI", rollno : 12 } -->
+    <script>
+     const objeto1 = {
+    name: "David Rayy",
+    sclass:"VI",
+    rollno: 12,
+     }
+     const Oarray = Object.keys(objeto1);
+    
+     for (let i in Oarray) {
+
+document.write((parseInt(i)+1), "*  ");
+document.write(Oarray[i], ": ");
+document.write(objeto1[Oarray[i]], "<br>");
+
+     }
+        document.write("<br>");
+
+     for (let key of Oarray) {
+
+document.write(key,": ");
+
+document.write(objeto1[key],"<br>");
+}
+    </script>
+    <p><b>Ejercicio 2</b></p>
+     <!-- Ejercicio 2: escribe un programa que declare el siguiente objeto: { x: 1, y: 2 }. A
+     continuación, elimina la propiedad x y añade una propiedad nueva z con valor 5. -->
+     <script> const objeto2 = {
+        x: 1,
+        y: 2,
+         }
+         delete objeto2.x;
+         objeto2.z=5;
+
+         document.write("x=",objeto2.x," ","z=",objeto2.z);
+         
+         </script>
+<p><b>Ejercicio 3</b></p>
+<!-- Ejercicio 3: escribe un programa que declare dos objetos: { x: 1, y: 2, z: 3 } y { a: 1, y:
+    2, z: 1 }. A continuación, comprueba qué nombres de propiedades son coincidentes y
+    cuáles son también coincidentes en valor. -->
+    <script>
+const objeto3 = {
+        x: 1,
+        y: 2,
+        z: 3,
+         }
+         const objeto4 = {
+        a: 1,
+        y: 2,
+        z: 1,
+        f: 5,
+         }
+         const Oarray3 = Object.keys(objeto3);
+         const Oarray4= Object.keys(objeto4);
+          let repetidos= [];
+          let repetidos2=[];
+   
+      for (let i = 0; i <= ((Math.max(Oarray3.length,Oarray4.length))-1) ; i++) {
+          
+        
+        if (Oarray3[i]==Oarray4[i]) {
+           repetidos.push(Oarray3[i]);
+          
+          if (objeto3[Oarray3[i]]==objeto4[Oarray4[i]]) 
+          {  
+            repetidos2.push(Oarray3[i]);
+            
+          
+      } }}
+        
+         document.write("Dados dos objetos son coincidentes propiedades: "+repetidos+". Y de estas propiedades, son coincidentes en valor: "+repetidos2+".");      
+           
+    
+    </script>
+</body>
+</html>
